@@ -1,0 +1,55 @@
+/* Updated: 1768642621467 */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --background: #050508;
+  --foreground: #faf9f7;
+  --orange: #ff6b00;
+}
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+  body {
+    @apply bg-[#050508] text-[#faf9f7] antialiased;
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.6;
+  }
+}
+
+.font-display { font-family: 'Playfair Display', serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+h1, h2, h3, h4, h5, h6 {
+  @apply tracking-tighter leading-none;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+::selection {
+  @apply bg-[#ff6b00] text-white;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#050508];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 hover:bg-[#ff6b00] transition-colors;
+}
+
+html {
+  scroll-behavior: smooth;
+}
